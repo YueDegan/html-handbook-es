@@ -1,0 +1,37 @@
+site_name: HTML Handbook Español
+site_description: Libro de HTML en español
+site_author: https://github.com/YueDegan
+
+theme:
+  name: material
+  language: es
+
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Modo oscuro
+
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+
+docs_dir: docs
+
+nav:
+  - Portada: 0_cover.md
+  - Prefacio: 1-Prefacio.md
+  - Introducción: 2-Introduction.md
+  - HTML Básico: 3-HTML-Basics.md
+  - Encabezados: 4-The-document-heading.md
+  - Cuerpo: 5-The-document-body.md
+  - Texto: 6-Tags-that-interact-with-text.md
+  - Enlaces: 7-Links.md
+  - Estructura: 8-Container-structure-tags.md
+  - Formularios: 9-Forms.md
+  - Tablas: 10-Tables.md
+  - Audio y Video: 11-audio-and-video.md
+  - Iframes: 12-iframes.md
+  - Imágenes: 13-Images.md
+  - Accesibilidad: 14-Accessibility.md
