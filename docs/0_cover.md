@@ -10,7 +10,7 @@ Fundamentos • Semántica • Formularios • Multimedia • Accesibilidad • 
 
 ---
 #### Traducción:
-* [YueDegan](https://github.com/YueDegan)
+* [José J. Sánchez C.](https://github.com/YueDegan)
 * [zetta102](https://github.com/zetta102)
 
 Documento de libre distribución • Basado en una obra Open Source
