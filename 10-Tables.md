@@ -1,10 +1,10 @@
 # Tablas
 
-En los primeros días de la web, las tablas eran parte importante en la construcción de interfaces.
+En los primeros días de la web, las tablas eran una parte importante en la construcción de interfaces.
 
-Luego, fueron reemplazadas por CSS y su capacidad de creación de interfaces, y hoy tenemos poderosas herramientas como Grid y Flexbox de CSS para construir interfaces. Las tablas son hoy en día usadas para, como se puede imaginar, ¡crear tablas!
+Posteriormente fueron reemplazadas por CSS y sus capacidades para crear interfaces. Hoy contamos con herramientas muy potentes, como CSS Grid y Flexbox, para construir interfaces. En la actualidad, las tablas se usan para lo que fueron diseñadas: ¡crear tablas!
 
-### La etiqueta `table`
+## La etiqueta `table`
 
 Puede definir una tabla usando la etiqueta `table`:
 
@@ -14,11 +14,11 @@ Puede definir una tabla usando la etiqueta `table`:
 </table>
 ```
 
-Dentro de la tabla definiremos los datos. Tenemos que pensar en términos de filas, lo que significa que lo que se agrega a una table son filas, no columnas. Las columnas se definirán dentro de una fila.
+Dentro de la tabla definiremos los datos. Debemos pensar en términos de filas, lo que significa que lo que se agrega a una tabla son filas, no columnas. Las columnas se definen dentro de cada fila.
 
-### Filas
+## Filas
 
-Una fila se agrega usando la etiqueta `tr`, y es lo único que podemos agregar a una etiqueta `table`:
+Una fila se agrega usando la etiqueta `tr`:
 
 ```html
 <table>
@@ -30,17 +30,17 @@ Una fila se agrega usando la etiqueta `tr`, y es lo único que podemos agregar a
 
 Esta es una tabla con tres filas.
 
-La primera fila _puede_ tomar el rol de encabezado.
+La primera fila *puede* desempeñar el papel de encabezado.
 
-### Encabezados de columna
+## Encabezados de columna
 
-El encabezado de una tabla contiene el nombre de una columna, típicamente en negritas.
+El encabezado de una tabla contiene el nombre de una columna, normalmente mostrado en negrita.
 
-Piense en un documento de Excel / Google Sheets. Es similar al encabezado `A-B-C-D...` superior.
+Piense en una hoja de cálculo de Excel o Google Sheets. Es similar a los encabezados `A-B-C-D...` de la parte superior.
 
 ![](9-Tables/Screen%20Shot%202019-06-20%20at%2010.18.17.png)
 
-Se define el encabezado usando la etiqueta `th`:
+El encabezado se define usando la etiqueta `th`:
 
 ```html
 <table>
@@ -54,9 +54,9 @@ Se define el encabezado usando la etiqueta `th`:
 </table>
 ```
 
-### Contenido de una tabla
+## Contenido de una tabla
 
-El contenido de una tabla se define usando etiquetas `td` dentro los otros elementos `tr`:
+El contenido de una tabla se define usando etiquetas `td` dentro de los elementos `tr`:
 
 ```html
 <table>
@@ -78,11 +78,11 @@ El contenido de una tabla se define usando etiquetas `td` dentro los otros eleme
 </table>
 ```
 
-Los navegadores lo renderizan de la siguiente manera, si no le agrega estilos con CSS:
+Los navegadores la renderizan de la siguiente manera si no se le aplican estilos con CSS:
 
 ![](9-Tables/Screen%20Shot%202019-06-20%20at%2010.24.08.png)
 
-Agregarl el siguiente CSS:
+Agregar el siguiente CSS:
 
 ```css
 th, td {
@@ -91,13 +91,13 @@ th, td {
 }
 ```
 
-Hace que la tabla se vea más como una tabla:
+hace que la tabla tenga un aspecto más tradicional:
 
 ![](9-Tables/Screen%20Shot%202019-06-20%20at%2010.26.15.png)
 
-### Tamaño de filas y columnas
+## Tamaño de filas y columnas
 
-Una fila puede expandirse a dos o más columnas, usando el atributo `colspan`:
+Una celda puede expandirse a dos o más columnas usando el atributo `colspan`:
 
 ```html
 <table>
@@ -118,7 +118,7 @@ Una fila puede expandirse a dos o más columnas, usando el atributo `colspan`:
 
 ![](9-Tables/Screen%20Shot%202019-06-20%20at%2010.27.59.png)
 
-O puede expandirse a dos o más filas, usando el atributo `rowspan`:
+También puede expandirse a dos o más filas usando el atributo `rowspan`:
 
 ```html
 <table>
@@ -139,11 +139,11 @@ O puede expandirse a dos o más filas, usando el atributo `rowspan`:
 
 ![](9-Tables/Screen%20Shot%202019-06-20%20at%2010.29.37.png)
 
-### Encabezados de fila
+## Encabezados de fila
 
-Antes, le expliqué cómo tener encabezados de columnas, usando la etiqueta `th` dentro de la primera etiqueta `tr` de la tabla.
+Anteriormente expliqué cómo crear encabezados de columna usando la etiqueta `th` dentro de la primera fila (`tr`) de la tabla.
 
-Puede agregar una etiqueta `th` como el primer elemento dentro de una etiqueta `tr` que no sea la primera `tr` de la tabla para obtener encabezados de fila:
+También puede agregar una etiqueta `th` como el primer elemento de cualquier otra fila para crear encabezados de fila:
 
 ```html
 <table>
@@ -153,12 +153,12 @@ Puede agregar una etiqueta `th` como el primer elemento dentro de una etiqueta `
     <th>Columna 3</th>
   </tr>
   <tr>
-    <th>Fil 1</th>
+    <th>Fila 1</th>
     <td>Col 2</td>
     <td>Col 3</td>
   </tr>
   <tr>
-    <th>Fil 1</th>
+    <th>Fila 2</th>
     <td>Col 2</td>
     <td>Col 3</td>
   </tr>
@@ -167,19 +167,19 @@ Puede agregar una etiqueta `th` como el primer elemento dentro de una etiqueta `
 
 ![](9-Tables/Screen%20Shot%202019-06-20%20at%2010.49.16.png)
 
-### Más etiquetas para organizar las tablas
+## Más etiquetas para organizar las tablas
 
-Existen tres etiquetas más que pueden ser agregadas a una tabla para tenerla más organizada.
+Existen tres etiquetas adicionales que pueden agregarse a una tabla para organizar mejor su estructura.
 
-Son mejor usadas con tablas grandes, para así definir correctamente tanto el pie como el encabezado de la misma.
+Son especialmente útiles en tablas grandes, ya que permiten definir claramente el encabezado, el cuerpo y el pie de la tabla.
 
-Esas etiquetas son:
+Estas etiquetas son:
 
 - `thead`
 - `tbody`
 - `tfoot`
 
-Estas envuelven las etiquetas `tr` de manera que claramente definan las diferentes secciones de la tabla. Aquí un ejemplo:
+Agrupan las etiquetas `tr` para definir claramente las distintas secciones de la tabla. Por ejemplo:
 
 ```html
 <table>
@@ -192,12 +192,12 @@ Estas envuelven las etiquetas `tr` de manera que claramente definan las diferent
   </thead>
   <tbody>
     <tr>
-      <th>Fil 1</th>
+      <th>Fila 1</th>
       <td>Col 2</td>
       <td>Col 3</td>
     </tr>
     <tr>
-      <th>Fil 2</th>
+      <th>Fila 2</th>
       <td>Col 2</td>
       <td>Col 3</td>
     </tr>
@@ -205,8 +205,8 @@ Estas envuelven las etiquetas `tr` de manera que claramente definan las diferent
   <tfoot>
     <tr>
       <td></td>
-      <td>Pie de Col 1</td>
-      <td>Pie de Col 2</td>
+      <td>Pie de Columna 2</td>
+      <td>Pie de Columna 3</td>
     </tr>
   </tfoot>
 </table>
@@ -214,13 +214,13 @@ Estas envuelven las etiquetas `tr` de manera que claramente definan las diferent
 
 ![](9-Tables/Screen%20Shot%202019-06-20%20at%2010.52.41.png)
 
-## Descripción de tabla
+## Descripción de una tabla
 
-Una tabla debería tener una etiqueta `caption` que describa su contenido. Esa etiqueta debería ser agregada inmediatamente después de la etiqueta `table`:
+Una tabla debería tener una etiqueta `caption` que describa su contenido. Esta etiqueta debe agregarse inmediatamente después de la etiqueta `table`:
 
 ```html
 <table>
-  <caption>Edades de los Perritos</caption>
+  <caption>Edades de los perritos</caption>
   <tr>
     <th>Perrito</th>
     <th>Edad</th>
