@@ -1,10 +1,10 @@
 # Iframes
 
-La etiqueta `iframe` nos permite agregar contenido de origen distinto (otras páginas) a nuestra página web.
+La etiqueta `iframe` nos permite agregar contenido de otro origen (otras páginas) a nuestra página web.
 
-A nivel técnico, un iframe crea el contenido de forma anidada. Esto significa que el iframe no interfiere con la página original y viceversa. JavaScript y/o CSS no "gotean" desde/hacia los iframes.
+A nivel técnico, un iframe crea el contenido de forma anidada. Esto significa que el iframe no interfiere con la página original y viceversa. JavaScript y/o CSS no "se filtran" desde o hacia los iframes.
 
-Muchos sitios usan iframes para ejecutar varios procesos. Puede que conozca CodePen, Glitch u otros sitios que le permiten escribir código en una parte de la página, y luego ver el resultado en otra. Eso es un iframe.
+Muchos sitios usan iframes para ejecutar varios procesos. Puede que conozca CodePen, Glitch u otros sitios que le permiten escribir código en una parte de la página y luego ver el resultado en otra. Eso es un iframe.
 
 Puede crear uno de la siguiente manera:
 
@@ -18,7 +18,7 @@ También puede hacer referencia a una URL absoluta:
 <iframe src="https://site.com/page.html"></iframe>
 ```
 
-Puede también establecer parámetros de altura y anchura. En caso que no lo haga, iframe usará los valores por defecto, una caja de 300x150 píxeles:
+También puede establecer parámetros de altura y anchura. En caso de que no lo haga, el iframe usará los valores por defecto: una caja de 300 × 150 píxeles:
 
 ```html
 <iframe src="page.html" width="800" height="400"></iframe>
@@ -26,7 +26,7 @@ Puede también establecer parámetros de altura y anchura. En caso que no lo hag
 
 ## Srcdoc
 
-El atributo `srcdoc` le permite especificar algún código HTML para mostrar. Es un alternativa a `src`, pero más reciente y no soportada por Edge 18 y versiones anteriores, así como por Internet Explorer:
+El atributo `srcdoc` le permite especificar código HTML para mostrar. Es una alternativa a `src`, pero es más reciente y no está soportado por Edge 18 ni versiones anteriores, así como tampoco por Internet Explorer:
 
 ```html
 <iframe srcdoc="<p>My dog is a good dog</p>"></iframe>
@@ -42,56 +42,56 @@ Si lo omitimos, todo estará permitido:
 <iframe src="page.html"></iframe>
 ```
 
-Si lo establecemos en "", nada estará permitido:
+Si lo establecemos en `""`, nada estará permitido:
 
 ```html
 <iframe src="page.html" sandbox=""></iframe>
 ```
 
-Podemos seleccionar las acciones que permitiremos al añadir opciones al atributo `sandbox`. Puede permitir múltiples acciones al agregarlas con un espacio entre ellas. Esta es una lista incompleta de las opciones posibles:
+Podemos seleccionar las acciones permitidas añadiendo opciones al atributo `sandbox`. Puede habilitar múltiples acciones separándolas con espacios. Esta es una lista incompleta de las opciones disponibles:
 
-* `allow-forms`: permite enviar el contenido de las `forms`.
-* `allow-modals`: permite abrir ventanas modales, incluyendo llamar a `alert()` en JavaScript.
-* `allow-orientation-lock` permite bloquear la orientación de pantalla.
-* `allow-popups` permite popups, usando `window.open()` y enlaces `target="_blank"`.
-* `allow-same-origin` trata el recurso que está cargándose como si fuera del mismo origen.
-* `allow-scripts` deja que el iframe cargado corra scripts (pero no que deje crear popups).
-* `allow-top-navigation` da al iframe acceso al nivel superior de navegación.
+- `allow-forms`: permite enviar formularios.
+- `allow-modals`: permite abrir ventanas modales, incluyendo llamadas a `alert()` desde JavaScript.
+- `allow-orientation-lock`: permite bloquear la orientación de la pantalla.
+- `allow-popups`: permite abrir ventanas emergentes mediante `window.open()` y enlaces con `target="_blank"`.
+- `allow-same-origin`: trata el recurso cargado como si perteneciera al mismo origen.
+- `allow-scripts`: permite ejecutar scripts dentro del iframe, pero no abrir ventanas emergentes.
+- `allow-top-navigation`: permite al iframe acceder al nivel superior de navegación.
 
 ## Allow
 
-Actualmente experimental y solo soportado por navegadores basados en Chromium, es el futuro de intercambio de recursos entre la ventana padre y el iframe.
+Actualmente es un atributo experimental y solo está soportado por navegadores basados en Chromium. Representa el futuro del intercambio de permisos entre la ventana principal y el iframe.
 
-Es similar al atributo `sandbox`, pero permitiéndonos características más específicas, incluyendo:
+Es similar al atributo `sandbox`, pero permite conceder permisos más específicos, entre ellos:
 
-- `accelerometer`, que da acceso a la interfaz API de acelerómetros.
-- `ambient-light-sensor`, que da acceso a la interfaz API de AmbientLightSensor.
-- `autoplay`, que permite reproducir automáticamente archivos de audio y video.
-- `camera`, que da acceso a la cámara del dispositivo por medio de la interfaz API getUserMedia.
-- `display-capture`, que permite acceder al contenido de la pantalla usando la API getDisplayMedia.
+- `accelerometer`, que da acceso a la API del acelerómetro.
+- `ambient-light-sensor`, que da acceso a la API `AmbientLightSensor`.
+- `autoplay`, que permite la reproducción automática de archivos de audio y video.
+- `camera`, que da acceso a la cámara del dispositivo mediante la API `getUserMedia`.
+- `display-capture`, que permite acceder al contenido de la pantalla mediante la API `getDisplayMedia`.
 - `fullscreen`, que permite acceder al modo de pantalla completa.
-- `geolocation`, que permite acceder a la API de geolocalización.
-- `gyroscope`, que da acceso a la interfaz API del giroscopio.
-- `magnetometer`, que da acceso a la interfaz API del magnetómetro.
-- `microphone`, que da acceso al micrófono del dispositivo por medio de la interfaz API getUserMedia.
+- `geolocation`, que da acceso a la API de geolocalización.
+- `gyroscope`, que da acceso a la API del giroscopio.
+- `magnetometer`, que da acceso a la API del magnetómetro.
+- `microphone`, que da acceso al micrófono del dispositivo mediante la API `getUserMedia`.
 - `midi`, que da acceso a la API Web MIDI.
-- `payment`, que da acceso a la API de petición de pagos.
-- `speaker`, que da acceso a la reproducción de audio por medio de los altavoces del dispositivo.
+- `payment`, que da acceso a la API de solicitudes de pago.
+- `speaker`, que permite la reproducción de audio mediante los altavoces del dispositivo.
 - `usb`, que da acceso a la API WebUSB.
 - `vibrate`, que da acceso a la API de vibración.
 - `vr`, que da acceso a la API WebVR.
 
 ## Referrer
 
-Al cargar un iframe, el navegador envía información importante sobre el usuario que lo carga con el encabezado de `Referer`.
+Al cargar un iframe, el navegador envía información sobre la página de origen mediante el encabezado HTTP `Referer`.
 
-El atributo `referrerpolicy` nos deja establecer la información del usuario a enviar al iframe cuando carga. Esta etiqueta es un encabezado HTTP que deja que la página sepa quién la está cargando. Estos son los valores permitidos:
+El atributo `referrerpolicy` permite establecer qué información será enviada al iframe durante la carga. Estos son los valores permitidos:
 
-- `no-referrer-when-downgrade`, que es el atributo por defecto, y envía la información cuando la página actual esté cargada sobre HTTPS y el iframe en HTTP.
-- `no-referrer`, que no envía la información del encabezado.
-- `origin`, que envía la información, y solo contiene el origen (puerto, protocolo y dominio), no solo el origen más la dirección, que suele ser la información que envía por defecto.
-- `origin-when-cross-origin`, que envía la información del encabezado en su forma completa (origen + dirección) al cargarlo en una página del mismo dominio (puerto, protocolo y dominio). De otra manera, solo envía el origen.
-- `same-origin`, la información se envía solamente si el iframe se carga desde el mismo dominio (puerto, protocolo y dominio).
-- `strict-origin`, envía la información de origen como el encabezado si la página actual fue cargada sobre HTTPS y el iframe también. No envía nada si el iframe se envía sobre HTTP.
-- `strict-origin-when-cross-origin`, envía el origen + dirección como infomación de encabezado al trabajar en el mismo origen. Envía el origen como infomación si la página actual se carga sobre HTTPS y el iframe también. No envía nada si el iframe se carga sobre HTTP.
-- `unsafe-url`, que envía el origen + dirección como información incluso al cargar recursos sobre HTTP mientras que la página haya sido cargada sobre HTTPS.
+- `no-referrer-when-downgrade`, que es el valor por defecto, envía la información cuando la página actual se carga mediante HTTPS y el iframe mediante HTTP.
+- `no-referrer`, que no envía información en el encabezado.
+- `origin`, que envía únicamente el origen (protocolo, dominio y puerto).
+- `origin-when-cross-origin`, que envía la URL completa cuando el recurso pertenece al mismo origen y solo el origen cuando pertenece a uno distinto.
+- `same-origin`, que envía la información únicamente si el iframe pertenece al mismo origen.
+- `strict-origin`, que envía únicamente el origen cuando tanto la página actual como el iframe usan HTTPS. No envía información si el iframe usa HTTP.
+- `strict-origin-when-cross-origin`, que envía la URL completa cuando ambos recursos pertenecen al mismo origen; en solicitudes entre distintos orígenes, envía únicamente el origen si ambos usan HTTPS. No envía información si el iframe usa HTTP.
+- `unsafe-url`, que envía la URL completa incluso al cargar recursos mediante HTTP desde una página cargada mediante HTTPS.
