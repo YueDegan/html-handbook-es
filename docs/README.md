@@ -1,15 +1,55 @@
-# El Manual de HTML
-Traducción al español del libro open source [The HTML Handbook](https://github.com/flaviocopes/html-handbook), escrito por Flavio Copes.
+# HTML Handbook en Español
 
-Este repositorio contendrá la traducción al español del Manual de HTML.
+Este proyecto es una versión en español del libro open source **The HTML Handbook**, escrito por **Flavio Copes** y traducido inicialmente por **[zetta102](https://github.com/zetta102)**
 
-Todos los comentarios son bienvenidos, sin embargo, serían especialmente útiles los siguientes:
+El contenido original ha sido traducido y adaptado como parte de un proceso de aprendizaje y documentación.
 
-* ¿Se me olvidó agregar/traducir algo importante?
-* ¿Alguna explicación es demasiado complicada?
-* ¿Agregué/traduje información irrelevante?
-* ¿Hay errores de tipeo/escritura?
+Actualmente el repositorio ha evolucionado hacia un **sitio de documentación estática** generado con [MkDocs](https://www.mkdocs.org/) y publicado mediante GitHub Pages.
 
-Todas las PRs son bienvenidas siempre y cuando sea para este tipo de comentarios.
+---
 
-¡Muchas gracias por leerme!
+## Autor original
+
+El contenido base de este proyecto pertenece a:
+- Flavio Copes  
+- The HTML Handbook
+
+Todo el crédito por el contenido original es para el autor.
+
+---
+
+## Sitio web
+
+👉 https://yuedegan.github.io/html-handbook-es/
+
+---
+
+## Estructura del proyecto
+
+- `docs/` → contenido en Markdown
+- `mkdocs.yml` → configuración del sitio
+- `requirements.txt` → dependencias
+- `.github/workflows/` → despliegue automático
+
+---
+
+## Objetivo
+
+Crear una versión en español estructurada y navegable del manual, manteniendo fidelidad al contenido original y mejorando la experiencia de lectura mediante una plataforma moderna.
+
+---
+
+## Contribuciones
+
+Se agradecen contribuciones como:
+
+- Correcciones de traducción
+- Mejoras de redacción
+- Ajustes técnicos
+- Clarificación de conceptos
+
+---
+
+## Nota
+
+Este proyecto es una traducción educativa y no pretende reemplazar el trabajo original.
