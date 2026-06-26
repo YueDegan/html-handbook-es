@@ -1,22 +1,22 @@
-# Imàgenes
+# Imágenes
 
-Las imàgenes pueden ser mostradas usando la etiqueta `img`.
+Las imágenes pueden mostrarse usando la etiqueta `img`.
 
-Esta etiqueta acepta un atributo `src`, usado para configurar la fuente de la imagen:
+Esta etiqueta acepta un atributo `src`, que se utiliza para indicar la fuente de la imagen:
 
 ```html
 <img src="image.png">
 ```
 
-Podemos usar una amplia cantidad de imàgenes, estando las màs comunes en formato PNG, JPEG, GIF, SVG y, màs recientemente, en WebP.
+Podemos utilizar una amplia variedad de formatos de imagen. Los más comunes son PNG, JPEG, GIF, SVG y, más recientemente, WebP.
 
-El estàndar HTML requiere que esté presente un atributo `alt` que describa el contenido de la imagen. Esto es usado tanto por herramientas de lectura de pantalla como por bots de motores de búsqueda:
+El estándar HTML requiere que el atributo `alt` esté presente para describir el contenido de la imagen. Este atributo es utilizado tanto por los lectores de pantalla como por los motores de búsqueda:
 
 ```html
 <img src="dog.png" alt="Una foto de un perro">
 ```
 
-Puede cambiar los atributos `width` y `height` para configurar el espacio que el elemento tomará, de manera que el navegador pueda tomarlo en cuenta y no cambie la interfaz al terminarse de cargar. Toma un valor numérico, expresado en píxeles.
+También puede establecer los atributos `width` y `height` para reservar el espacio que ocupará la imagen. De esta forma, el navegador puede calcular el diseño de la página antes de que la imagen termine de cargarse, evitando cambios inesperados en la interfaz. Ambos atributos reciben un valor numérico expresado en píxeles.
 
 ```html
 <img src="dog.png" alt="Una foto de un perro" width="300" height="200">
@@ -24,9 +24,9 @@ Puede cambiar los atributos `width` y `height` para configurar el espacio que el
 
 ## La etiqueta `figure`
 
-La etiqueta `figure` suele ser usada con la etiqueta `img`.
+La etiqueta `figure` suele utilizarse junto con la etiqueta `img`.
 
-`figure` es una etiqueta semántica que suele usarse cuando se busca mostrar una imagen con pie de foto. Se usa de la siguiente manera:
+`figure` es una etiqueta semántica que se emplea cuando se desea mostrar una imagen acompañada de un pie de foto. Se utiliza de la siguiente manera:
 
 ```html
 <figure>
@@ -36,81 +36,80 @@ La etiqueta `figure` suele ser usada con la etiqueta `img`.
 </figure>
 ```
 
-La etiqueta `figcaption` ajusta el texto del pie de foto.
+La etiqueta `figcaption` define el pie de foto de la imagen.
 
-## Imágenes responsivas usando `srcset`
+## Imágenes responsivas con `srcset`
 
-El atributo `srcset` te permite configurar imágenes responsivas que el navegador puede usar dependiendo de la densidad de píxeles o la anchira de la ventana, de acuerdo a sus preferencias. De esta manera, solo podrá descargar los recursos que necesite para mostrar la página, sin descargar una imagen grande si está en un dispositivo móvil, por ejemplo.
+El atributo `srcset` permite configurar imágenes responsivas para que el navegador seleccione la versión más adecuada según la densidad de píxeles o el tamaño de la ventana. De este modo, solo descargará la imagen que realmente necesite, evitando cargar imágenes de gran tamaño en dispositivos pequeños.
 
-Acá un ejemplo, donde damos 4 imágenes adicionales para 4 tamaños de pantalla diferentes:
-
-```html
-<img src="dog.png"
-	alt="Una foto de un perro"
-	srcset="dog-500.png 500w,
-	  		 dog-800.png 800w,
-			 dog-1000.png 1000w,
-			 dog-1400.png 1400w">ventana de
-```
-
-En `srcset` usamos la medida `w` (del inglés _width_) para indicar la anchura de la ventana.
-
-Ya que lo hacemos, también debemos usar el atributo `sizes`:
+Este es un ejemplo en el que se proporcionan cuatro versiones de la misma imagen para distintos tamaños de pantalla:
 
 ```html
 <img src="dog.png"
-	alt="Una foto de un perro"
-	sizes="(max-width: 500px) 100vw, (max-width: 900px) 50vw, 800px"
-	srcset="dog-500.png 500w,
-	  		 dog-800.png 800w,
-			 dog-1000.png 1000w,
-			 dog-1400.png 1400w">
+     alt="Una foto de un perro"
+     srcset="dog-500.png 500w,
+             dog-800.png 800w,
+             dog-1000.png 1000w,
+             dog-1400.png 1400w">
 ```
 
-En este ejemplo, la línea `(max-width: 500px) 100vw, (max-width: 900px) 50vw, 800px` en el atributo `sizes` describe el tamaño de la imagen en relación a la ventana del navegador, con múltiples condiciones separadas por una coma.
+En `srcset` se utiliza la unidad `w` (del inglés *width*) para indicar el ancho de cada imagen.
 
-La condición `max-width: 500px ` configura el tamaño de la imagen en correlación con la anchura de la ventana del navegador. En resumen, si el tamaño de la ventana es < `500px`, muestra la imagen al 100% del tamaño de la ventana.
+Cuando se utiliza `srcset` con descriptores `w`, también debe utilizarse el atributo `sizes`:
 
-Si el tamaño de la ventana es más grande, pero < `900px`, muestra la imagen, pero al 50% del tamaño de la ventana.
+```html
+<img src="dog.png"
+     alt="Una foto de un perro"
+     sizes="(max-width: 500px) 100vw, (max-width: 900px) 50vw, 800px"
+     srcset="dog-500.png 500w,
+             dog-800.png 800w,
+             dog-1000.png 1000w,
+             dog-1400.png 1400w">
+```
 
-Y si es incluso más grande, ajusta la imagen a `800px`.
+En este ejemplo, la expresión `(max-width: 500px) 100vw, (max-width: 900px) 50vw, 800px` describe el tamaño que ocupará la imagen según el ancho de la ventana del navegador.
 
-La unidad de medida `vw` (del inglés _viewport width_) puede ser nueva para usted, y en resumen diremos que 1 `vw` es 1% de la anchura de la ventana, así que `100vw` es el 100% de la misma. También existe una medida `vh` (del inglés _viewport height_) que, como tal vez se imagine, es similar a `vw`, pero refiriéndose a la altura de la ventana, en lugar de su anchura.
+Si la ventana mide menos de `500px`, la imagen ocupará el `100%` del ancho de la ventana (`100vw`).
 
-Un sitio útil para generar las imágenes necesarias para `srcset` es [https://responsivebreakpoints.com/](https://responsivebreakpoints.com/).
+Si la ventana mide menos de `900px`, pero más de `500px`, la imagen ocupará el `50%` del ancho de la ventana (`50vw`).
+
+En pantallas más grandes, la imagen tendrá un ancho fijo de `800px`.
+
+La unidad `vw` (del inglés *viewport width*) representa el `1%` del ancho de la ventana del navegador. Por ejemplo, `100vw` equivale al `100%` de dicho ancho. Existe también la unidad `vh` (*viewport height*), que representa el `1%` de la altura de la ventana.
+
+Un sitio útil para generar automáticamente las imágenes necesarias para `srcset` es <https://responsivebreakpoints.com/>.
 
 ## La etiqueta `picture`
 
-HTML también nos otorga la etiqueta `picture`, que hace un trabajo similar a `srcset`, con diferencias muy sutiles pero importantes.
+HTML también proporciona la etiqueta `picture`, que cumple un propósito similar al de `srcset`, aunque ofrece un mayor control sobre qué imagen utilizar en cada situación.
 
-Puede usar `picture` cuando, en lugar de mostrar una versión más pequeña de la imagen, quiera cambiarla completamente. O usar un formato distinto.
+Puede utilizar `picture` cuando, en lugar de mostrar una versión más pequeña de una imagen, necesite cambiar completamente el archivo o servir un formato distinto.
 
-El mejor caso que he encontrado es usarlo al mostrar una imagen en formato WebP, que no está todavia ampliamente soportado. En la etiqueta `picture` puede especificar una lista de imágenes, y éstas serán mostradas en orden, de manera que, en el siguiente ejemplo, los navegadores que soporten WebP usarán la primera, o JPG si no es el caso:
+Un caso de uso muy común es servir imágenes en formato WebP y proporcionar un formato alternativo para navegadores que no lo soporten. En el siguiente ejemplo, los navegadores compatibles utilizarán la imagen WebP y, en caso contrario, cargarán la versión JPG:
 
 ```html
 <picture>
   <source type="image/webp" srcset="image.webp">
-  <img src="image.jpg" alt="An image">
+  <img src="image.jpg" alt="Una imagen">
 </picture>
 ```
 
-> La etiqueta `source` define uno (o más) formatos para las imágenes. La etiqueta `img` se usa en caso que el navegador sea antiguo y no soporte la etiqueta `picture`.
+> La etiqueta `source` permite definir uno o más recursos alternativos. La etiqueta `img` actúa como recurso de respaldo para navegadores que no admiten `picture`.
 
-En la etiqueta `source` dentro de `picture` puede agregarse un atributo `media` para configurar consultas multimedia (llamadas también _media queries_).
+La etiqueta `source` también admite el atributo `media`, que permite utilizar consultas de medios (*media queries*) para seleccionar la imagen más adecuada.
 
-El ejemplo siguiente funciona más o menos como el ejemplo usado con `srcset`:
+El siguiente ejemplo funciona de forma similar al uso de `srcset`:
 
 ```html
 <picture>
-  <source media="(min-width: 500w)" srcset="dog-500.png" sizes="100vw">
-  <source media="(min-width: 800w)" srcset="dog-800.png" sizes="100vw">
-  <source media="(min-width: 1000w)" srcset="dog-1000.png"	sizes="800px">
-  <source media="(min-width: 1400w)" srcset="dog-1400.png"	sizes="800px">
+  <source media="(min-width: 500px)" srcset="dog-500.png" sizes="100vw">
+  <source media="(min-width: 800px)" srcset="dog-800.png" sizes="100vw">
+  <source media="(min-width: 1000px)" srcset="dog-1000.png" sizes="800px">
+  <source media="(min-width: 1400px)" srcset="dog-1400.png" sizes="800px">
   <img src="dog.png" alt="Una imagen de un perro">
 </picture>
 ```
 
-Aunque funciona más o menos de la misma manera, lleva un poco más de código que la etiqueta `img`.
+Aunque el funcionamiento es similar al de `srcset`, el elemento `picture` ofrece mayor flexibilidad, a costa de requerir algo más de código.
 
-Esta etiqueta es muy reciente, pero ya es [soportada](https://caniuse.com/#search=picture) por todos los navegadores más populares, salvo Opera Mini e IE en todas sus versiones.
-
+Se trata de una característica ampliamente soportada por los navegadores modernos. Las principales excepciones son Internet Explorer y Opera Mini.
