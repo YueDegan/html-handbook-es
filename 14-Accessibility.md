@@ -2,25 +2,25 @@
 
 Es importante que diseñemos nuestro HTML con la accesibilidad en mente.
 
-Tener un HTML con esto en mente significa que las personas con discapacidad puedan usar tu página. Existen personas completa o parcialmente invidentes, personas con pérdida auditiva y una multitud de otras diferentes discapacidades.
+Tener un HTML accesible significa que las personas con discapacidad puedan usar su página. Existen personas completa o parcialmente invidentes, personas con pérdida auditiva y una gran variedad de otras discapacidades.
 
-Desafortunadamente, no suele dársele a esta sección la importancia que requiere, ya que no es tan llamativa como las demás.
+Desafortunadamente, no suele dársele a este aspecto la importancia que requiere, ya que no es tan llamativo como otros temas.
 
-¿Qué pasaría si una persona que no puede *ver* tu página quiere consumir su contenido? En primer lugar, ¿cómo lo hacen? No pueden usar el ratón, usan algo llamado **lector de pantalla**. No tiene por qué imaginárselo cuando puede probarlo. Google provee la extensión gratuita de Chrome, [ChromeVox](https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn/). La accesibilidad también debe tomar en cuenta que se permita a estas herramientas seleccionar los elementos o navegar por las páginas con tranquilidad.
+¿Qué pasaría si una persona que no puede *ver* su página quisiera consumir su contenido? En primer lugar, ¿cómo lo hace? No puede usar el ratón; utiliza una herramienta llamada **lector de pantalla**. No tiene por qué imaginárselo cuando puede probarla. Google ofrece la extensión gratuita para Chrome llamada [ChromeVox](https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn/). La accesibilidad también implica permitir que estas herramientas puedan seleccionar los elementos y navegar por las páginas correctamente.
 
-Las páginas y aplicaciones web no son siempre construidas con la accesibilidad como una de sus primeras metas y, aunque tal vez la versión 1 no tenga este acercamiento, puede hacerse accesible en una iteración futura. Mientras antes se haga, mejor, pero nunca es demasiado tarde.
+Las páginas y aplicaciones web no siempre son construidas con la accesibilidad como una de sus principales prioridades y, aunque tal vez la versión 1 no contemple este enfoque, puede hacerse accesible en una iteración futura. Cuanto antes se haga, mejor, pero nunca es demasiado tarde.
 
-Es importante tomar esto siempre en cuenta, especialmente cuando se habla de contenido de interés público, como puede ser las páginas web de los gobiernos u otras organizaciones públicas.
+Es importante tener esto siempre presente, especialmente cuando se trata de contenido de interés público, como las páginas web de gobiernos u otras organizaciones públicas.
 
-¿Qué significa hacer una página HTML accesible? Déjeme ilustrarle las cosas principales que debe tomar en cuenta.
+¿Qué significa hacer una página HTML accesible? Permítame ilustrarle los aspectos principales que debe tener en cuenta.
 
-> Nota: hay una gran cantidad de cosas extra para tomar en cuenta, pero van dentro de otra sección, dedicada a CSS, como podría ser los colores, el contraste y las fuentes. O tal vez [cómo hacer las imágenes en formato SVG accesibles](https://css-tricks.com/accessible-svgs/). No hablaremos de esto en este libro.
+> **Nota:** hay muchos otros aspectos relacionados con la accesibilidad que pertenecen a CSS, como los colores, el contraste y la tipografía. También existen temas específicos, como [cómo hacer accesibles las imágenes SVG](https://css-tricks.com/accessible-svgs/). No hablaremos de ello en este libro.
 
-## Uso de HTML semático
+## Uso de HTML semántico
 
-El HTML semático es importantísimo, y una de las cosas principales que usted debería hacerse cargo al crear una página. Déjeme ilustrar algunos escenarios comunes.
+El HTML semántico es fundamental y es una de las principales responsabilidades al crear una página. Veamos algunos ejemplos comunes.
 
-Es importante usar la estructura correcta para las etiquetas de escritura. La más importante es `h1`, siendo otros números usados para información menos importante, pero todas las del mismo nivel deberían tener el mismo significado (piense en ello como en la estructura de un árbol):
+Es importante utilizar una estructura correcta para los encabezados. La etiqueta más importante es `h1`; las siguientes (`h2`, `h3`, etc.) representan niveles inferiores de jerarquía. Todos los encabezados del mismo nivel deberían representar el mismo nivel de importancia (piense en ello como la estructura de un árbol):
 
 ```
 h1
@@ -32,13 +32,13 @@ h1
 			h4
 ```
 
-Use `strong` y `em` en lugar de `b` e `i`, respectivamente. Tienen el mismo aspecto visual, pero las dos primeras tienen significado semántico asociado a ellas. `b` e `i` son elementos mas visuales.
+Utilice `strong` y `em` en lugar de `b` e `i`, respectivamente. Aunque tienen el mismo aspecto visual por defecto, `strong` y `em` aportan significado semántico, mientras que `b` e `i` son elementos principalmente de presentación.
 
-Las listas también son parte importante en la accesibillidad. Un lector de pantalla puede detectar uan lista y proveer un resumen, dejando luego que el usuario decida leer el resto o no.
+Las listas también son parte importante de la accesibilidad. Un lector de pantalla puede detectar una lista y ofrecer un resumen, permitiendo luego que el usuario decida si desea recorrerla por completo.
 
 Una tabla debería tener una etiqueta `caption` que describa su contenido:
 
-```
+```html
 <table>
   <caption>Edad de los perros</caption>
   <tr>
@@ -52,25 +52,25 @@ Una tabla debería tener una etiqueta `caption` que describa su contenido:
 </table>
 ```
 
-## Use atributos `alt` para las imágenes
+## Use el atributo `alt` para las imágenes
 
-Todas sus imágenes deben tener un atributo `alt` que describa el contenido de la misma. No solo es una buena práctica, es requerido por el estándar HTML y su HTML no estará validado sin esto.
+Todas las imágenes deben tener un atributo `alt` que describa su contenido. No solo es una buena práctica, sino que además es un requisito del estándar HTML.
 
 ```html
 <img src="dog.png" alt="Una foto de mi perro">
 ```
 
-También ayuda al SEO, así que es otro incentivo para agregarlo.
+También ayuda al SEO, por lo que existe otro incentivo para utilizarlo.
 
 ## Use el atributo `role`
 
-Este atributo `role` le permite asignar roles específicos a los varios elementos de su página.
+El atributo `role` permite asignar roles específicos a los distintos elementos de una página.
 
-Puede asignar un montón de roles distintos, eso sí, todos en perfecto inglés, por lo que puede que tener un diccionario a la mano le ayude.
+Existen muchos roles diferentes, todos definidos en inglés, por lo que puede resultar útil consultar un diccionario o la documentación cuando sea necesario.
 
-Son un montón, y para una completa referencia de cada uno, le entrego este [enlaze de MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles). Pero tampoco es necesario asignar un rol a cada elemento de la página. Los lectores de pantalla pueden inferirlo de la etiqueta HTML en la mayoría de los casos. Por ejemplo, no necesita agregar este atributo a etiquetas como `nav`, `button` o `form`.
+Son numerosos y, para consultar la referencia completa de cada uno, puede visitar este [enlace de MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles). Sin embargo, no es necesario asignar un rol a todos los elementos de la página. Los lectores de pantalla suelen inferirlo a partir de la etiqueta HTML utilizada. Por ejemplo, no necesita agregar este atributo a etiquetas como `nav`, `button` o `form`.
 
-Tomemos un ejemplo con la etiqueta `nav`. Puede usarla para definir la navegación de página de la siguiente manera:
+Tomemos como ejemplo la etiqueta `nav`. Puede usarla para definir la navegación de una página de la siguiente manera:
 
 ```html
 <nav>
@@ -81,7 +81,7 @@ Tomemos un ejemplo con la etiqueta `nav`. Puede usarla para definir la navegaci�
 </nav>
 ```
 
-Si estuviera *forzado* a usar una etiqueta `div` en lugar de `nav`, debería entonces usar el rol `navigation`:
+Si estuviera *forzado* a usar una etiqueta `div` en lugar de `nav`, entonces sí debería usar el rol `navigation`:
 
 ```html
 <div role="navigation">
@@ -92,13 +92,13 @@ Si estuviera *forzado* a usar una etiqueta `div` en lugar de `nav`, debería ent
 </div>
 ```
 
-Así que acá tiene un ejemplo práctico: `role` es usado para asignar un valor significativo cuando la etiqueta no entrega el significado deseado
+En otras palabras, `role` se utiliza para aportar significado semántico cuando la etiqueta HTML empleada no lo proporciona.
 
 ## Use el atributo `tabindex`
 
-Este atributo le permite cambiar el orden en el cual la tecla Tabulador "selecciona" los elementos seleccionables. Por defecto, solo los enlaces y elementos de un formulario solo "seleccionables" de esta manera, por lo que no tiene que usar `tabindex` en ellos.
+Este atributo permite modificar el orden en el que la tecla Tab selecciona los elementos interactivos de una página. Por defecto, los enlaces y los controles de formulario ya forman parte del orden de tabulación, por lo que normalmente no es necesario agregarles `tabindex`.
 
-Agregar `tabindex="0"` a un elemento hace al mismo seleccionable:
+Agregar `tabindex="0"` a un elemento hace que pueda recibir el foco mediante la tecla Tab:
 
 ```html
 <div tabindex="0">
@@ -106,15 +106,15 @@ Agregar `tabindex="0"` a un elemento hace al mismo seleccionable:
 </div>
 ```
 
-Por otra parte, usar `tabindex="-1"` en su lugar elimina este tipo de navegación del elemento, siendo bastante útil en algunos casos.
+Por otra parte, usar `tabindex="-1"` elimina el elemento del orden de tabulación, aunque seguirá pudiendo recibir el foco mediante JavaScript.
 
 ## Use los atributos `aria`
 
-ARIA es un acrónimo que significa Aplicaciones de Internet Ricas y Accesibles (_Accessible Rich Internet Applications_, en inglés), y define semática aplicada a elementos.
+ARIA es un acrónimo de *Accessible Rich Internet Applications* y define atributos que añaden información semántica a los elementos.
 
 ### `aria-label`
 
-Este atributo se usa para agregar una oración que describa a un elemento.
+Este atributo se utiliza para agregar una descripción textual a un elemento.
 
 Ejemplo:
 
@@ -124,11 +124,11 @@ Ejemplo:
 
 ### `aria-labelledby`
 
-Este atributo configuta una correlación entre el elemento actual y el que lo etiqueta.
+Este atributo establece una relación entre el elemento actual y el elemento que actúa como su etiqueta.
 
-Si entiende cómo un elemento `input` se puede asociar a un elemento `label`, puede pensar esto en términos similares.
+Si entiende cómo un elemento `input` puede asociarse con un elemento `label`, puede pensar en `aria-labelledby` de forma similar.
 
-Pasamos la identificación del objetoq ue describe el elemento actual.
+Se indica el identificador (`id`) del elemento que describe al elemento actual.
 
 Ejemplo:
 
@@ -142,24 +142,24 @@ Ejemplo:
 
 ### `aria-describedby`
 
-Este atributo nos permite asociar un elemento con otro elemento que sirva como descripción.
+Este atributo permite asociar un elemento con otro que proporciona una descripción adicional.
 
 Ejemplo:
 
 ```html
-<button aria-describedby="pADescripcion" >Pague Ahora</button>
+<button aria-describedby="pADescripcion">Pague ahora</button>
 
-<div id="pADescripcion">¡Hacer click en el botón lo enviará a nuestro fomulario!</div>
+<div id="pADescripcion">¡Hacer clic en el botón lo enviará a nuestro formulario!</div>
 ```
 
-### Use aria-hidden para ocultar contenido
+### Use `aria-hidden` para ocultar contenido
 
-Con el atributo `aria-hidden="true"`, le dirá a los lectores de pantalla que ignoren el elemento
+El atributo `aria-hidden="true"` indica a los lectores de pantalla que deben ignorar ese elemento.
 
 ## Dónde aprender más
 
-Esta es solo una introducción al tema. Para aprender más, recomiendo estos recursos (en inglés):
+Esta es solo una introducción al tema. Para profundizar, recomiendo estos recursos (en inglés):
 
-- [W3](https://www.w3.org/TR/WCAG20/)
-- [WebAim](https://webaim.org/)
-- [Google Developers](https://developers.google.com/web/fundamentals/accessibility/)
+- [W3C Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/TR/WCAG20/)
+- [WebAIM](https://webaim.org/)
+- [Google Developers: Accessibility](https://developers.google.com/web/fundamentals/accessibility/)
