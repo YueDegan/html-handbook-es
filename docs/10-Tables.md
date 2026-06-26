@@ -38,7 +38,7 @@ El encabezado de una tabla contiene el nombre de una columna, normalmente mostra
 
 Piense en una hoja de cálculo de Excel o Google Sheets. Es similar a los encabezados `A-B-C-D...` de la parte superior.
 
-![](9-Tables/Screen%20Shot%202019-06-20%20at%2010.18.17.png)
+![](assets/tables/Screen%20Shot%202019-06-20%20at%2010.18.17.png)
 
 El encabezado se define usando la etiqueta `th`:
 
@@ -80,7 +80,7 @@ El contenido de una tabla se define usando etiquetas `td` dentro de los elemento
 
 Los navegadores la renderizan de la siguiente manera si no se le aplican estilos con CSS:
 
-![](9-Tables/Screen%20Shot%202019-06-20%20at%2010.24.08.png)
+![](assets/tables/Screen%20Shot%202019-06-20%20at%2010.24.08.png)
 
 Agregar el siguiente CSS:
 
@@ -93,7 +93,7 @@ th, td {
 
 hace que la tabla tenga un aspecto más tradicional:
 
-![](9-Tables/Screen%20Shot%202019-06-20%20at%2010.26.15.png)
+![](assets/tables/Screen%20Shot%202019-06-20%20at%2010.26.15.png)
 
 ## Tamaño de filas y columnas
 
@@ -116,7 +116,7 @@ Una celda puede expandirse a dos o más columnas usando el atributo `colspan`:
 </table>
 ```
 
-![](9-Tables/Screen%20Shot%202019-06-20%20at%2010.27.59.png)
+![](assets/tables/Screen%20Shot%202019-06-20%20at%2010.27.59.png)
 
 También puede expandirse a dos o más filas usando el atributo `rowspan`:
 
@@ -137,7 +137,7 @@ También puede expandirse a dos o más filas usando el atributo `rowspan`:
 </table>
 ```
 
-![](9-Tables/Screen%20Shot%202019-06-20%20at%2010.29.37.png)
+![](assets/tables/Screen%20Shot%202019-06-20%20at%2010.29.37.png)
 
 ## Encabezados de fila
 
@@ -165,7 +165,7 @@ También puede agregar una etiqueta `th` como el primer elemento de cualquier ot
 </table>
 ```
 
-![](9-Tables/Screen%20Shot%202019-06-20%20at%2010.49.16.png)
+![](assets/tables/Screen%20Shot%202019-06-20%20at%2010.49.16.png)
 
 ## Más etiquetas para organizar las tablas
 
@@ -212,7 +212,7 @@ Agrupan las etiquetas `tr` para definir claramente las distintas secciones de la
 </table>
 ```
 
-![](9-Tables/Screen%20Shot%202019-06-20%20at%2010.52.41.png)
+![](assets/tables/Screen%20Shot%202019-06-20%20at%2010.52.41.png)
 
 ## Descripción de una tabla
 
