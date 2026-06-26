@@ -12,7 +12,7 @@ Tenemos:
 
 y puede ser difícil entender la diferencia entre ellas.
 
-Veamos cuándo usar cada una de ellas.
+Veamos cuándo usar cada una.
 
 ### `article`
 
@@ -35,7 +35,7 @@ O una lista de enlaces.
 </div>
 ```
 
-El límite no son solo las listas: un articulo puede ser el elemento principal de una página.
+El límite no son solo las listas: un artículo puede ser el elemento principal de una página.
 
 ```html
 <article>
@@ -44,11 +44,11 @@ El límite no son solo las listas: un articulo puede ser el elemento principal d
 </article>
 ```
 
-Dentro de una etiqueta `article` deberíamos tener un título (`h1`-`h6`) y una
+Dentro de una etiqueta `article` deberíamos tener un título (`h1`-`h6`) y contenido.
 
 ### `section`
 
-Representa una sección de un documento. Cada sección tiene una etiqueta de encabezado (`h1`-`h6`), y luego la sección del _cuerpo_.
+Representa una sección de un documento. Cada sección suele tener una etiqueta de encabezado (`h1`-`h6`) y luego el cuerpo de la sección.
 
 Ejemplo:
 
@@ -62,7 +62,7 @@ Ejemplo:
 
 Es útil dividir un artículo largo en diferentes **secciones**.
 
-No debería usarse como un elemento contenedor génerico, ya que ese es el trabajo de `div`.
+No debería usarse como un elemento contenedor genérico, ya que ese es el trabajo de `div`.
 
 ### `div`
 
@@ -74,15 +74,15 @@ No debería usarse como un elemento contenedor génerico, ya que ese es el traba
 </div>
 ```
 
-Se suele agregar un atributo `class` o `id` a este elemento, para poder modelarlo con CSS.
+Suele agregarse un atributo `class` o `id` a este elemento para poder estilizarlo con CSS.
 
-Usamos `div` en cualquier lugar que necesitemos un contenedor, pero que las etiquetas existentes no se ajusten lo suficiente.
+Usamos `div` en cualquier lugar donde necesitemos un contenedor, pero las etiquetas existentes no se ajusten adecuadamente.
 
 ## Etiquetas relacionadas con la página
 
 ### `nav`
 
-Está etiqueta es usada para crear el esqueleto que define la navegación de página. Dentro de ella suele agregarse una lista `ul` u `ol`:
+Esta etiqueta se usa para crear el esqueleto que define la navegación de la página. Dentro de ella suele agregarse una lista `ul` u `ol`:
 
 ```html
 <nav>
@@ -95,9 +95,9 @@ Está etiqueta es usada para crear el esqueleto que define la navegación de pá
 
 ### `aside`
 
-La etiqueta `aside` es usada para agregar una pieza de contenido que está relacionado al contenido principal.
+La etiqueta `aside` se usa para agregar contenido relacionado con el contenido principal.
 
-Una caja en la cual agregar una cita, por ejemplo. O una barra lateral.
+Una caja en la que se puede agregar una cita, por ejemplo, o una barra lateral.
 
 Ejemplo:
 
@@ -111,24 +111,24 @@ Ejemplo:
 </div>
 ```
 
-Usar `aside` permite señalar que las cosas que contiene no son parte del flujo regular del documento.
+Usar `aside` permite señalar que el contenido que contiene no forma parte del flujo principal del documento.
 
 ### `header`
 
-La etiqueta `header` representa la introducción (o también el resumen) de una página. Puede, por ejemplo, contener una o más etiquetas de encabezado (`h1`-`h6`), un resumen, o una imagen.
+La etiqueta `header` representa la introducción (o resumen) de una página. Puede contener una o más etiquetas de encabezado (`h1`-`h6`), un resumen o una imagen.
 
 ```html
 <article>
   <header>
-	  <h1>Título del Artículo</h1>
+	  <h1>Título del artículo</h1>
   </header>
   ...
-</div>
+</article>
 ```
 
 ### `main`
 
-La etiqueta main representa la parte principal del artículo `main`:
+La etiqueta `main` representa el contenido principal del documento:
 
 ```html
 <article>
@@ -136,12 +136,12 @@ La etiqueta main representa la parte principal del artículo `main`:
   <main>
     <p>....</p>
   </main>
-</div>
+</article>
 ```
 
 ### `footer`
 
-La etiqueta `footer` se usa para determinar el pie de un artículo, o el pie de una página:
+La etiqueta `footer` se usa para definir el pie de un artículo o el pie de una página:
 
 ```html
 <article>
@@ -149,5 +149,5 @@ La etiqueta `footer` se usa para determinar el pie de un artículo, o el pie de 
   <footer>
     <p>Pie de nota..</p>
   </footer>
-</div>
+</article>
 ```
