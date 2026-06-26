@@ -48,7 +48,7 @@ Los encabezados, especialmente durante la organización del contenido, son esenc
 
 El navegador mostrará por defecto la etiqueta `h1` con el tamaño de texto más grande, reduciéndolo a medida que el número asociado a `h` aumenta:
 
-![](6-Tags-that-interact-with-text/Screen%20Shot%202019-06-11%20at%2019.46.57.png)
+![](assets/tags/Screen%20Shot%202019-06-11%20at%2019.46.57.png)
 
 Todos los encabezados son elementos en bloque. No pueden contener otros elementos, solo texto.
 
@@ -133,7 +133,7 @@ Las listas ordenadas son similares, solo que usan la etiqueta `ol`:
 
 La diferencia entre ambas es que las listas ordenadas muestran un número antes de cada elemento:
 
-![](6-Tags-that-interact-with-text/Screen%20Shot%202019-06-12%20at%2009.35.05.png)
+![](assets/tags/Screen%20Shot%202019-06-12%20at%2009.35.05.png)
 
 Las listas de definición son un poco diferentes. Están compuestas por un término y su descripción:
 
@@ -148,7 +148,7 @@ Las listas de definición son un poco diferentes. Están compuestas por un térm
 
 Típicamente se muestran de la siguiente forma en los navegadores:
 
-![](6-Tags-that-interact-with-text/Screen%20Shot%202019-06-12%20at%2009.45.21.png)
+![](assets/tags/Screen%20Shot%202019-06-12%20at%2009.45.21.png)
 
 Debo admitir que no se usan tanto en el día a día como las dos anteriores, pero pueden ser útiles en algunas ocasiones.
 
@@ -167,7 +167,7 @@ Hay otro conjunto de etiquetas con propósitos de presentación:
 
 Este es un ejemplo de la visualización aplicada por los navegadores:
 
-![](6-Tags-that-interact-with-text/Screen%20Shot%202019-06-12%20at%2008.43.55.png)
+![](assets/tags/Screen%20Shot%202019-06-12%20at%2008.43.55.png)
 
 Aquí puede que surja la pregunta: ¿en qué se diferencia `b` de `strong`? ¿Y cómo se diferencia `i` de `em`?
 
