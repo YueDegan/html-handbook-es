@@ -1,63 +1,64 @@
 # Bases de HTML
 
-HTML es el lenguaje de marcado que usamos para estructural el contenido que consumimos en internet.
+HTML es el lenguaje de marcado que usamos para estructurar el contenido que consumimos en internet.
 
-HTML se sirve al navegador de diferentes maneras. 
-* Puede ser generado por una aplicación del servidor que lo construya dependiendo de la petición o de los datos de la sesión, como por ejemplo con Rails, Laravel o Django. 
-* Puede ser generado por una aplicación de JavaScript del lado del cliente que genere HTML en su ejecución. 
-* De manera más simple, puede ser almacenado en un archivo y servido al navegador por medio de un servidor web.
+HTML se sirve al navegador de diferentes maneras.
 
-Vayamos a este último caso. Aunque en la práctica posiblemente es la forma menos popular para generar HTML, sigu siendo esencial conocer al menos los bloques más básicos.
+- Puede ser generado por una aplicación del servidor que lo construya dependiendo de la petición o de los datos de la sesión, como por ejemplo Rails, Laravel o Django.
+- Puede ser generado por una aplicación de JavaScript del lado del cliente que genere HTML durante su ejecución.
+- De manera más simple, puede ser almacenado en un archivo y servido al navegador por medio de un servidor web.
 
-Por convención,  un archivo HTML es guardado con una extensión `.html` o `.htm`.
+Vayamos a este último caso. Aunque, en la práctica, posiblemente sea la forma menos popular de generar HTML, sigue siendo esencial conocer al menos sus bloques más básicos.
 
-Dentro de este archivo, organizamos el contenido usando **etiquetas** (o _tags_, en inglés).
+Por convención, un archivo HTML se guarda con la extensión `.html` o `.htm`.
 
-Las etiquetas están alrededor del contenido, y cada una le da un significado especial al texto que rodea.
+Dentro de este archivo organizamos el contenido usando **etiquetas** (o *tags*, en inglés).
+
+Las etiquetas rodean el contenido, y cada una le da un significado especial al texto que contiene.
 
 Hagamos algunos ejemplos.
 
-Este fragmento de HTML crea un parágrafo usando la etiqueta `p`:
+Este fragmento de HTML crea un párrafo usando la etiqueta `p`:
 
 ```html
-<p>Un parágrafo de texto</p>
+<p>Un párrafo de texto</p>
 ```
 
-Este otro fragmento crea una lista de objetos usando la etiqueta `ul`, que significa *lista sin ordenar* (el nombre viene del inglés _unordered list_), y las etiquetas `li`, que significan *objeto de lista* (_list item_, en inglés):
+Este otro fragmento crea una lista de elementos usando la etiqueta `ul`, que significa *lista sin ordenar* (del inglés *unordered list*), y las etiquetas `li`, que significan *elemento de lista* (*list item*, en inglés):
 
 ```html
 <ul>
-  <li>Primer objeto</li>
-  <li>Segundo objeto</li>
-  <li>Tercer objeto</li>
+  <li>Primer elemento</li>
+  <li>Segundo elemento</li>
+  <li>Tercer elemento</li>
 </ul>
 ```
 
-Cuando una página HTML es servida por el navegador, las etiquetas son interpretadas, y el navegador muestra los elementos de acuerdo con las reglas que definen su apariencia visual.
+Cuando una página HTML es interpretada por el navegador, las etiquetas son procesadas y los elementos se muestran de acuerdo con las reglas que definen su apariencia visual.
 
-Algunas de estas reglas están estrablecidas de fábrica, como la manera en la que una lista se muestra o como un enlace está subrayado y en color azul.
+Algunas de estas reglas están establecidas de forma predeterminada, como la manera en que se muestra una lista o cómo un enlace aparece subrayado y en color azul.
 
-Algunas otras reglas pueden ser establecidas por usted usando hojas de estilo en cascada, conocidas más comúnmente como CSS..
+Otras pueden ser definidas mediante hojas de estilo en cascada, conocidas comúnmente como CSS.
 
-HTML no es un lenguaje de presentación. No se preocupa por cómo las cosas se *ven*, sino por qué *significan*.
+HTML no es un lenguaje de presentación. No se preocupa por cómo se *ven* las cosas, sino por lo que *significan*.
 
-Queda de parte del navegador determinar cómo se ven las cosas con las reglas establecidas por la persona que crea la página usando el lenguaje CSS.
+Corresponde al navegador determinar cómo se ven los elementos siguiendo las reglas definidas por quien crea la página mediante CSS.
 
 Sin embargo, esos dos ejemplos eran fragmentos tomados fuera del contexto de una página real.
 
-### Estructura de una página en HTML
+### Estructura de una página HTML
 
-Hagamos un ejemplo de una página en HTML real
+Hagamos un ejemplo de una página HTML real.
 
-Las cosas comienzan con la declaración del tipo de documento (conocido como _doctype_), una manera de decirle al navegador que lo que está "viendo" es una página HTML, así como la versión que está utilizándose.
+Todo comienza con la declaración del tipo de documento (conocida como *doctype*), una manera de decirle al navegador que lo que está "viendo" es una página HTML, así como la versión que se está utilizando.
 
-El HTML moderno usa esta declaración de la siguiente manera:
+El HTML moderno usa esta declaración:
 
 ```html
 <!DOCTYPE html>
 ```
 
-Luego tenemos el elemento `html`, que tiene una etiqueta de apertura y de clausura:
+Luego tenemos el elemento `html`, que posee una etiqueta de apertura y una de cierre:
 
 ```html
 <!DOCTYPE html>
@@ -66,18 +67,19 @@ Luego tenemos el elemento `html`, que tiene una etiqueta de apertura y de clausu
 </html>
 ```
 
-La mayoría de las etiquetas viene en pares, con una etiqueta de apertura y de cerradura. La etiqueta de cerradura se escrible casi de la misma manera que la de clausura, pero con un `/`:
+La mayoría de las etiquetas vienen en pares: una etiqueta de apertura y otra de cierre. La etiqueta de cierre se escribe casi de la misma manera que la de apertura, pero con un `/`:
 
 ```html
 <etiqueta>contenido</etiqueta>
 ```
-Hay algunas etiquetas que no requieren etiquetas de clausura, dado que _no contienen_ nada dentro de ellas.
 
-La etiqueta de apertura `html` se usa al principio del documento, después de la declaración del tipo de documento.
+Hay algunas etiquetas que no requieren una etiqueta de cierre, ya que **no contienen** ningún contenido.
 
-La etiqueta de clausura de `html` es lo último presente en un documento de HTML.
+La etiqueta de apertura `html` se utiliza al principio del documento, después de la declaración del tipo de documento.
 
-Dentro del elemento `html` tenemos dos elementos : `head` y `body`:
+La etiqueta de cierre de `html` es lo último presente en un documento HTML.
+
+Dentro del elemento `html` tenemos dos elementos: `head` y `body`:
 
 ```html
 <!DOCTYPE html>
@@ -91,144 +93,144 @@ Dentro del elemento `html` tenemos dos elementos : `head` y `body`:
 </html>
 ```
 
-Dentro de `head` tendremos etiquetas esenciales para la creación de una página web, como el título, los metadatos, el CSS interno o externo y el código de JavaScript. La mayoría de estas cosas no aparecen directamente en la página, sino que ayudan al navegador (o a los bots de búsqueda) a mostrarla apropiadamente.
+Dentro de `head` tendremos etiquetas esenciales para la creación de una página web, como el título, los metadatos, el CSS interno o externo y el código JavaScript. La mayoría de estos elementos no aparecen directamente en la página, sino que ayudan al navegador (o a los motores de búsqueda) a mostrarla correctamente.
 
-Dentro de `body` tendremos el contenido de la página. Las **cosas visibles**.
+Dentro de `body` tendremos el contenido de la página: las **cosas visibles**.
 
 ### Etiquetas o elementos
 
 Mencioné etiquetas y elementos. ¿Cuál es la diferencia?
 
-Los elementos tienen una etiqueta de apertura y una de clausura. En este ejemplo, usaremos las etiquetas de apretura y clausura `p`para crear un elemento `p`:
+Los elementos tienen una etiqueta de apertura y una de cierre. En este ejemplo usamos las etiquetas de apertura y cierre `p` para crear un elemento `p`:
 
 ```html
-<p>Un parágrafo de texto</p>
+<p>Un párrafo de texto</p>
 ```
 
-Así, un elemento constituye el _paquete entero_:
+Así, un elemento constituye el *conjunto completo*:
 
-- una etiqueta de apertura
-- el texto de contenido (y posiblemente otras cosas)
-- una etiqueta de clausura
+- una etiqueta de apertura;
+- el contenido (y, posiblemente, otros elementos);
+- una etiqueta de cierre.
 
-Si un elemento no tiene una etiqueta de clausura, está solo escrito con la etiqueta de apertura y por esto no puede contener ningun texto.
+Si un elemento no tiene una etiqueta de cierre, está compuesto únicamente por la etiqueta de apertura y, por ello, no puede contener texto.
 
-Explicado esto, puedo usar ambos términos de manera intercambiable, a menos que explícitamente se mencione una etiqeuta de apertura o de clausura.
+Explicado esto, puedo usar ambos términos de manera intercambiable, a menos que se mencione explícitamente una etiqueta de apertura o de cierre.
 
 ### Atributos
 
-La etiqueta de apertura de un elemento puede tener fragmentos especiales de información que podemos agregarle, llamados **atributos**.
+La etiqueta de apertura de un elemento puede contener fragmentos especiales de información llamados **atributos**.
 
-Los atributos tienen una sintaxis de `atributo="valor"`:
-
-```html
-<p class="una-clase">Un parágrafo de texto</p>
-```
-
-> También pueden usarse comillas simples, pero es una buena práctica usar comillas dobles en su lugar.
-
-Podemos tener muchos de ellos:
+Los atributos siguen la sintaxis `atributo="valor"`:
 
 ```html
-<p class="una-clase" id="un-id">Un parágrafo de texto</p>
+<p class="una-clase">Un párrafo de texto</p>
 ```
 
-algunos de los atributos son booleanos, lo que significa que solo se necesita el atributo:
+> También pueden usarse comillas simples, pero es una buena práctica utilizar comillas dobles.
+
+Podemos tener varios atributos:
+
+```html
+<p class="una-clase" id="un-id">Un párrafo de texto</p>
+```
+
+Algunos atributos son booleanos, lo que significa que basta con escribir el nombre del atributo:
 
 ```html
 <script defer src="archivo.js"></script>
 ```
 
-Los atributos `class` e `id` son de los que más te encontrarás.
+Los atributos `class` e `id` son de los que más encontrará.
 
-Tienen un significado especial, y son útiles tanto en CSS como en JavaScript.
+Tienen un significado especial y son útiles tanto en CSS como en JavaScript.
 
-La diferencia entre ambos es que un `id` es único dentro del contexto de una página web, no puede ser duplicado.
+La diferencia entre ambos es que un `id` debe ser único dentro de una página web; no puede repetirse.
 
-Las clases, por otra parte, pueden aparecer múltiples veces en múltiples elementos.
+Las clases, por otra parte, pueden aparecer múltiples veces y en múltiples elementos.
 
-Además, un `id` debe ser solo un valor. `class`, por su parte, puede contener múltiples valores, separados por un espacio:
+Además, un `id` solo puede tener un valor. `class`, por su parte, puede contener varios valores separados por espacios:
 
 ```html
-<p class="una-clase otra-clase">Un parágrafo de texto</p>
+<p class="una-clase otra-clase">Un párrafo de texto</p>
 ```
 
-Es común usar guiones `-` para separar palabras en un valor de clase, pero no es obligatorio.
+Es común usar guiones (`-`) para separar palabras en un nombre de clase, aunque no es obligatorio.
 
-Esos son solo dos de los atributos que puede usar. Algunos de ellos pueden ser usados solo en ciertas etiquetas, ya que son altamente especializados.
+Estos son solo dos de los muchos atributos que puede usar. Algunos solo pueden utilizarse en determinadas etiquetas, ya que son altamente especializados.
 
-Otros atributos pueden ser usados de manera más general. Justo acaba de ver dos de ellos, `id` y `class`, pero también tenemos otros, como `style`, que puede ser usado para agregar CSS dentro de un elemento (vale acotar que es una práctica no recomendada).
+Otros atributos son de uso general. Ya vimos `id` y `class`, pero también existe `style`, que puede utilizarse para agregar CSS directamente a un elemento (aunque es una práctica poco recomendable).
 
 ### ¿Mayúsculas o minúsculas?
 
-En HTML, es irrelevante que se use unas u otras dentro de las etiquetas. Las etiquetas pueden ser escritas enteramente en mayúsculas o minúsculas. Otrora era común usar mayúsculas, pero hoy en día es común usar minúsculas.
+En HTML es irrelevante usar mayúsculas o minúsculas en los nombres de las etiquetas. Estas pueden escribirse completamente en mayúsculas o en minúsculas. Antiguamente era común usar mayúsculas, pero hoy en día lo habitual es escribirlas en minúsculas.
 
-Usualmente escribiría así:
+Usualmente escribiría:
 
 ```html
-<p>Un parágrafo de texto</p>
+<p>Un párrafo de texto</p>
 ```
 
-y no así:
+y no:
 
 ```html
-<P>Un parágrafo de texto</P>
+<P>Un párrafo de texto</P>
 ```
 
 ### Espaciado
-Un detalle importante. En HTML, el espaciado no es relevante. A la hora de la interpretación, los espacios en blanco se quitan de la ecuación.
+
+Un detalle importante: en HTML el espaciado, por lo general, no es relevante. Durante la interpretación del documento, los espacios en blanco consecutivos se colapsan.
 
 Para el navegador,
 
 ```html
-<p>Un parágrafo de texto</p>
+<p>Un párrafo de texto</p>
 ```
 
-es lo mismo que
+es lo mismo que:
 
 ```html
-<p>        Un parágrafo de texto</p>
+<p>        Un párrafo de texto</p>
 ```
 
-y lo mismo que
+y también que:
 
 ```html
-<p>Un parágrafo
+<p>Un párrafo
 
 de
-           texto          </p>
+           texto</p>
 ```
 
- 
-Le aconsejaría que usara una sintaxis que le permita organizar visualmente los elementos, de manera que sea más fácil de leer, pero es libre de usar cualquier sintaxis que desee.
+Le aconsejaría usar una sintaxis que le permita organizar visualmente los elementos para facilitar su lectura, aunque es libre de utilizar el estilo que prefiera.
 
-Yo prefiero, 
+Yo prefiero:
 
 ```html
-<p>Un parágrafo de texto</p>
+<p>Un párrafo de texto</p>
 ```
 
-o
+o:
 
 ```html
 <p>
-	Un parágrafo de texto
+	Un párrafo de texto
 </p>
 ```
 
-Las etiquetas que estén dentro de otras deberían ser indentadas con 2 o 4 espacios (o tabulaciones, dependiendo de su gusto):
+Las etiquetas contenidas dentro de otras deberían indentarse con dos o cuatro espacios (o con tabulaciones, según su preferencia):
 
 ```html
 <body>
 	<p>
-		Un parágrafo de texto
+		Un párrafo de texto
 	</p>
 	<ul>
-		<li>Un objeto de lista</li>
+		<li>Un elemento de lista</li>
 	</ul>
 </body>
 ```
 
-> Nota: esta característica del espaciado significa que, si asi lo desea, agregar espacio puede ser bastante complicado. Le sugiero que use CSS para hacer más espacio cuando sea necesario.
+> **Nota:** Esta característica del espaciado implica que, si desea agregar espacios visibles, hacerlo únicamente con espacios puede resultar complicado. Lo recomendable es usar CSS cuando sea necesario modificar la separación entre elementos.
 
-> Nota: en casos especiales, puede usar la entidad HTML `&nbsp;` (un acrónimo que significa _non-breaking space_ (o un espacio que sí se muestra), pero explicaré más luego. Sin embargo, creo que esto no debería ser abusado. Es preferible usar CSS para alterar la presentación visual.
+> **Nota:** En casos especiales puede usar la entidad HTML `&nbsp;` (*non-breaking space* o espacio de no separación), pero hablaré de ella más adelante. Sin embargo, considero que no debería abusarse de su uso. Es preferible utilizar CSS para controlar la presentación visual.
