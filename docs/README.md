@@ -2,7 +2,7 @@
 
 Este proyecto es una versión en español del libro open source **The HTML Handbook**, escrito por **Flavio Copes** y traducido inicialmente por **[zetta102](https://github.com/zetta102)**
 
-El contenido original ha sido traducido y adaptado como parte de un proceso de aprendizaje y documentación.
+El contenido original ha sido corregido y adaptado como parte de un proceso de aprendizaje y documentación por **[José J. Sánchez C.](https://github.com/YueDegan)**.
 
 Actualmente el repositorio ha evolucionado hacia un **sitio de documentación estática** generado con [MkDocs](https://www.mkdocs.org/) y publicado mediante GitHub Pages.
 
