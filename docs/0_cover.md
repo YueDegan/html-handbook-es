@@ -1,44 +1,17 @@
-# HTML
+# **Manual de HTML**  
 
-## Manual de HTML
+##### Traducción del libro open source 
 
-### Edición en español
-
-### Basado en el libro open source
-
-# *The HTML Handbook*
-
-### por Flavio Copes
-
-```html
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Hola, mundo</title>
-</head>
-
-<body>
-
-    <h1>Bienvenido a la Web</h1>
-
-</body>
-
-</html>
-````
-
-<br>
+####"The HTML Handbook" *por Flavio Copes*
 
 ---
-
-## El lenguaje que construyó la Web
-
-### Una guía práctica para aprender HTML moderno
 
 Fundamentos • Semántica • Formularios • Multimedia • Accesibilidad • Buenas prácticas
 
 ---
+#### Traducción:
+* [YueDegan](https://github.com/YueDegan)
+* [zetta102](https://github.com/zetta102)
 
 Documento de libre distribución • Basado en una obra Open Source
 
